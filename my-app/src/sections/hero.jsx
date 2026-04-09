@@ -13,7 +13,7 @@ function IconButton({ href, label, children }) {
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       aria-label={label}
-      className="inline-flex h-13 w-13 items-center justify-center rounded-full border border-white/25 text-[var(--text)] transition hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
+      className="inline-flex h-13 w-13 items-center justify-center rounded-full border border-[var(--border-strong)] text-[var(--text)] transition hover:-translate-y-0.5 hover:border-[var(--border)] hover:bg-[var(--surface-2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
     >
       {children}
     </a>
@@ -33,9 +33,9 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Hero"
-      className="min-h-[calc(100vh-72px)] scroll-mt-[72px] pt-[clamp(3rem,10vh,24vh)]"
+      className="relative min-h-[calc(100vh-72px)] scroll-mt-[72px] overflow-hidden pt-[clamp(3rem,10vh,24vh)] will-change-transform"
     >
-      <div className="mx-auto w-full max-w-[1400px] px-4">
+      <div className="relative z-10 mx-auto w-full max-w-[1300px] px-4">
         <div className="max-w-none">
           <p className="m-0 mb-3 text-[var(--muted)] uppercase tracking-[.14em] font-semibold text-[clamp(1rem,2vw,2rem)]">
             Hello, I am
@@ -73,7 +73,6 @@ export default function Hero() {
           </div>
 
           <p className="m-0 mb-5 font-mono tracking-wide text-[var(--text)] text-[clamp(1.05rem,1.8vw,1.7rem)] whitespace-nowrap max-[900px]:whitespace-normal">
-            {/* A passionate Software Developer 🚀 | Motivated Innovator ✏️ | Maintainer 👷 */}
             Passionate Software Developer | Full Stack Web Developer | Maintainer
           </p>
 
